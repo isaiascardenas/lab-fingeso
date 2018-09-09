@@ -24,7 +24,7 @@ public class UsuarioService {
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public List<Usuario> getUser() {
+    public List<Usuario> getUsuario() {
         return usuarioRepository.findAll();
     }
 
@@ -32,7 +32,7 @@ public class UsuarioService {
     @ResponseBody
     public Usuario createUser(@RequestBody Usuario user) {
         List<Idea> ideas = user.getIdeas();
-        Comentario comentario = user.getComentario();
+        List<Comentario> comentarios = user.getComentarios();
         Usuario usuario = this.usuarioRepository.save(user);
 
         if (ideas != null && !ideas.isEmpty()) {
@@ -42,10 +42,11 @@ public class UsuarioService {
             }
         }
 
-        if (comentario != null) {
-            Comentario comentarioFromRepo = this.comentarioRepository.findComentarioById(comentario.getId());
-            comentarioFromRepo.setUsuario(usuario);
-            this.comentarioRepository.save(comentarioFromRepo);
+        if (comentarios != null && !ideas.isEmpty()) {
+            for (Comentario comentario : comentarios) {
+                comentario.setUsuario(usuario);
+                this.comentarioRepository.save(comentario);
+            }
         }
 
         return usuario;

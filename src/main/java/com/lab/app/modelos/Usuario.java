@@ -12,23 +12,55 @@ public class Usuario {
 
     @Id
     private String id;
-    private String name;
-    private String password;
-    private String role;
+    private String rol;
+    private String email;
+    private String nombre;
+    private String contraseña;
 
     @JsonIgnore
     @DBRef
     private List<Idea> ideas;
-
     @DBRef
-    private Comentario comentario;
+    private List<Comentario> comentarios;
 
-    public Comentario getComentario() {
-        return comentario;
+    public String getId() {
+        return this.id;
     }
 
-    public void setComentario(Comentario comentario) {
-        this.comentario = comentario;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre(String name) {
+        this.nombre = name;
+    }
+
+    public String getContraseña() {
+        return this.contraseña;
+    }
+
+    public void setContraseña(String password) {
+        this.contraseña = password;
+    }
+
+    public String getRol() {
+        return this.rol;
+    }
+
+    public void setRol(String role) {
+        this.rol = role;
+    }
+
+    public List<Comentario> getComentarios() {
+        return this.comentarios;
+    }
+
+    public void setComentario(List<Comentario> comentarios) {
+        this.comentarios = comentarios;
     }
 
     public List<Idea> getIdeas() {
@@ -37,37 +69,5 @@ public class Usuario {
 
     public void setIdeas(List<Idea> ideas) {
         this.ideas = ideas;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 }
