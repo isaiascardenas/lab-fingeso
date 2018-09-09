@@ -15,7 +15,6 @@ public class Usuario {
     private String rol;
     private String email;
     private String nombre;
-    private String contraseña;
 
     @JsonIgnore
     @DBRef
@@ -37,14 +36,6 @@ public class Usuario {
 
     public void setNombre(String name) {
         this.nombre = name;
-    }
-
-    public String getContraseña() {
-        return this.contraseña;
-    }
-
-    public void setContraseña(String password) {
-        this.contraseña = password;
     }
 
     public String getRol() {

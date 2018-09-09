@@ -13,7 +13,6 @@ public class RetoService {
     @Autowired
     private RetoRepository retoRepository;
 
-
     @RequestMapping(method = RequestMethod.GET)
     public List<Reto> getAllRetos() {
         return this.retoRepository.findAll();
