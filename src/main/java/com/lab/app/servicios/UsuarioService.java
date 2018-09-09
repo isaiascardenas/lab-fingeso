@@ -11,7 +11,7 @@ import com.lab.app.repositorios.ComentarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
-@RequestMapping(value = "/user")
+@RequestMapping(value = "/users")
 public class UsuarioService {
 
     @Autowired
@@ -24,24 +24,25 @@ public class UsuarioService {
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public List<Usuario> getUser(){
+    public List<Usuario> getUser() {
         return usuarioRepository.findAll();
     }
 
-    @RequestMapping(value = "/create" ,method = RequestMethod.POST)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
-    public Usuario createUser(@RequestBody Usuario user){
+    public Usuario createUser(@RequestBody Usuario user) {
         List<Idea> ideas = user.getIdeas();
         Comentario comentario = user.getComentario();
         Usuario usuario = this.usuarioRepository.save(user);
-        if(ideas != null && !ideas.isEmpty()){
-            for(Idea idea: ideas){
+
+        if (ideas != null && !ideas.isEmpty()) {
+            for (Idea idea: ideas) {
                 idea.setUsuario(usuario);
                 this.ideaRepository.save(idea);
             }
         }
-        if(comentario != null){
-            System.out.println("Comentarios no nulos");
+
+        if (comentario != null) {
             Comentario comentarioFromRepo = this.comentarioRepository.findComentarioById(comentario.getId());
             comentarioFromRepo.setUsuario(usuario);
             this.comentarioRepository.save(comentarioFromRepo);

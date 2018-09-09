@@ -7,7 +7,7 @@ import com.lab.app.repositorios.IdeaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
-@RequestMapping(value = "/idea")
+@RequestMapping(value = "/ideas")
 public class IdeaService {
 
     @Autowired
@@ -15,13 +15,13 @@ public class IdeaService {
 
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Idea> getAllIdeas(){
+    public List<Idea> getAllIdeas() {
         return this.ideaRepository.findAll();
     }
 
     @RequestMapping(value = "/create",method = RequestMethod.POST)
     @ResponseBody
-    public Idea createIdea(@RequestBody Idea idea){
+    public Idea createIdea(@RequestBody Idea idea) {
         return this.ideaRepository.save(idea);
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 @RestController
-@RequestMapping(value = "/comentario")
+@RequestMapping(value = "/comentarios")
 public class ComentarioService {
 
     @Autowired
@@ -16,14 +16,14 @@ public class ComentarioService {
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public List<Comentario> getAllComentarios(){
+    public List<Comentario> getAllComentarios() {
         return this.comentarioRepository.findAll();
     }
 
 
     @RequestMapping(value = "/create",method = RequestMethod.POST)
     @ResponseBody
-    public Comentario createComentario(@RequestBody Comentario comentario){
+    public Comentario createComentario(@RequestBody Comentario comentario) {
         return this.comentarioRepository.save(comentario);
     }
 }
