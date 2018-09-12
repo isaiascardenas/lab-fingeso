@@ -1,0 +1,67 @@
+<div *ngIf="idea">
+  <mat-card>
+    <mat-grid-list cols="12" rowHeight="50px">
+      <mat-grid-tile [colspan]="1" [rowspan]="3">
+        <button mat-icon-button (click)="idea.upvote()">
+          <mat-icon aria-label="Votar por esta idea">keyboard_arrow_up</mat-icon>
+        </button>
+        <div>{{ idea.votos }}1</div>
+        <button mat-icon-button (click)="idea.downvote()">
+          <mat-icon aria-label="Votar por esta idea">keyboard_arrow_down</mat-icon>
+        </button>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="11" [rowspan]="1" style="text-align: center;">
+        {{ idea.name }}
+
+        <!-- <mat-chip [color]="idea.reto.color">
+          {{ idea.reto.name }}
+        </mat-chip> -->
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="11" [rowspan]="2">
+        {{ idea.description }}
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+
+  <form action="" #newCommentForm="ngForm" (ngSubmit)="comment()">
+
+    <mat-form-field appearance="fill">
+      <textarea matInput placeholder="Escribe tu comentario aquí" [(ngModel)]="newComment" name="newComment" rows="5" required></textarea>
+    </mat-form-field>
+
+    <div class="button-row" style="text-align: right;">
+      <button mat-raised-button color="primary">
+        <mat-icon>comment</mat-icon>
+        Comentar
+      </button>
+    </div>
+  </form>
+  
+  <h2 class="mat-title">
+    <mat-icon>chat</mat-icon>
+    Comentarios
+  </h2>
+
+  <div class="card-list">
+    <mat-card *ngFor="let comment of comments">
+      <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon>user</mat-icon>
+          </div>
+          <mat-card-title>{{ comment.user }}</mat-card-title>
+          <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+        </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{ comment.comment }}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+
+  <!-- <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button> -->
+</div>

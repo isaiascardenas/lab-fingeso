@@ -1,0 +1,72 @@
+[
+    {
+        "_id": 1,
+        "name": "risus",
+        "description": "risus. Donec",
+        "color": "#3f51b5",
+        "user_id": 9
+    },
+    {
+        "_id": 2,
+        "name": "sed",
+        "description": "sed consequat auctor, nunc nulla vulputate",
+        "color": "#3f51b5",
+        "user_id": 3
+    },
+    {
+        "_id": 3,
+        "name": "sapien",
+        "description": "sapien. Aenean massa. Integer",
+        "color": "#3f51b5",
+        "user_id": 3
+    },
+    {
+        "_id": 4,
+        "name": "ultrices",
+        "description": "ultrices sit amet, risus. Donec",
+        "color": "#3f51b5",
+        "user_id": 10
+    },
+    {
+        "_id": 5,
+        "name": "Vestibulum",
+        "description": "Vestibulum ante ipsum primis in faucibus",
+        "color": "#3f51b5",
+        "user_id": 10
+    },
+    {
+        "_id": 6,
+        "name": "dui",
+        "description": "dui nec",
+        "color": "#3f51b5",
+        "user_id": 4
+    },
+    {
+        "_id": 7,
+        "name": "luctus",
+        "description": "luctus ut, pellentesque eget, dictum placerat, augue.",
+        "color": "#3f51b5",
+        "user_id": 3
+    },
+    {
+        "_id": 8,
+        "name": "risus",
+        "description": "risus, at fringilla purus mauris a nunc. In at pede.",
+        "color": "#3f51b5",
+        "user_id": 3
+    },
+    {
+        "_id": 9,
+        "name": "in",
+        "description": "in, tempus eu, ligula. Aenean euismod mauris",
+        "color": "#3f51b5",
+        "user_id": 6
+    },
+    {
+        "_id": 10,
+        "name": "odio",
+        "description": "odio tristique pharetra. Quisque ac libero nec ligula consectetuer rhoncus.",
+        "color": "#3f51b5",
+        "user_id": 6
+    }
+]

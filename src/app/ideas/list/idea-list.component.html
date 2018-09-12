@@ -1,0 +1,36 @@
+<form>
+  <mat-form-field appearance="fill">
+    <mat-label>Reto</mat-label>
+    <mat-select placeholder="Reto" name="reto">
+      <mat-option *ngFor="let reto of retos" [value]="reto.id">
+        {{ reto.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+  
+<div class="card-list">
+  <mat-card *ngFor="let idea of ideas">
+    <mat-card-header>
+        <mat-card-title>
+          {{ idea.name }}
+
+          <mat-chip-list>
+            <mat-chip style="background-color: {{ 'idea.reto.color' }};">
+                reto 1
+              {{ idea.reto_id }}
+              <!-- {{ idea.reto_id.name }} -->
+            </mat-chip>
+          </mat-chip-list>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+          {{ idea.description }}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button routerLink="/ideas/{{ idea.id }}">Ver detalle</a>
+    </mat-card-actions>
+  </mat-card>
+</div>

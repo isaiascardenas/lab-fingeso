@@ -1,0 +1,52 @@
+[
+    {
+        "_id": 1,
+        "name": "Hanna D. Gordon",
+        "rol_id": 1
+    },
+    {
+        "_id": 2,
+        "name": "Quinn L. Serrano",
+        "rol_id": 1
+    },
+    {
+        "_id": 3,
+        "name": "Solomon N. Simon",
+        "rol_id": 2
+    },
+    {
+        "_id": 4,
+        "name": "Lucius C. Reese",
+        "rol_id": 2
+    },
+    {
+        "_id": 5,
+        "name": "Hilda B. Griffin",
+        "rol_id": 1
+    },
+    {
+        "_id": 6,
+        "name": "Kiayada M. Mays",
+        "rol_id": 1
+    },
+    {
+        "_id": 7,
+        "name": "Savannah W. Vinson",
+        "rol_id": 2
+    },
+    {
+        "_id": 8,
+        "name": "Nina W. Marshall",
+        "rol_id": 2
+    },
+    {
+        "_id": 9,
+        "name": "Cruz E. Bell",
+        "rol_id": 2
+    },
+    {
+        "_id": 10,
+        "name": "Timothy W. Barker",
+        "rol_id": 2
+    }
+]

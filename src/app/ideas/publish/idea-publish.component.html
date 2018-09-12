@@ -1,0 +1,30 @@
+<h2 class="mat-title">Publicar Idea</h2>
+
+<form action="" #ideaForm="ngForm" (ngSubmit)="publish()">
+  <mat-form-field>
+    <input matInput placeholder="Título" [(ngModel)]="idea.name" name="name" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select matInput placeholder="Reto" [(ngModel)]="idea.reto_id" name="reto_id" required>
+      <mat-option *ngFor="let reto of retos" [value]="reto.id">
+        {{ reto.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Descripción" [(ngModel)]="idea.description" name="description" rows="5" required></textarea>
+  </mat-form-field>
+
+  <div class="button-row">
+    <a mat-raised-button color="warn" routerLink="/ideas">
+      <mat-icon>cancel</mat-icon>
+      Cancelar
+    </a>
+    <button mat-raised-button color="primary">
+      <mat-icon>publish</mat-icon>
+      Publicar
+    </button>
+  </div>
+</form>

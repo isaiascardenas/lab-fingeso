@@ -1,0 +1,24 @@
+<mat-card class="app-login-container">
+  <form action="">
+  
+    <mat-icon>account_circle</mat-icon>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre de usuario</mat-label>
+      <input matInput type="text" [(ngModel)]="login.user" name="user">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Rol</mat-label>
+      <mat-select [(ngModel)]="login.rol_id" name="rol_id">
+        <mat-option value="1">Participante</mat-option>
+        <mat-option value="2">Evaluador</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="login()">
+      Login
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+  </form>
+</mat-card>

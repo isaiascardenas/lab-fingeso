@@ -1,0 +1,23 @@
+<div class="card-list">
+    <mat-card *ngFor="let reto of retos">
+        <mat-card-header>
+            <mat-card-title>
+                {{ reto.name }}
+
+                <mat-chip-list>
+                    <mat-chip style="background-color: {{ reto.color }};">
+                        color
+                    </mat-chip>
+                </mat-chip-list>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+            {{ reto.description }}
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <a mat-button routerLink="/ reto/{{ reto.id }}">Ver detalle</a>
+        </mat-card-actions>
+    </mat-card>
+</div>

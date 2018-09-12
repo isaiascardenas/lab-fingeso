@@ -1,0 +1,69 @@
+<div *ngIf="user" class="full-spacing">
+  <app-login></app-login>
+</div>
+<div *ngIf="!user">
+  <!-- NAVBAR -->
+  <mat-toolbar>
+    <span>Alaya Ideas</span>
+    
+    <span class="fill-remaining-space">
+      <form action="" (onSubmit)="search()">
+        <mat-form-field appearance="fill" [floatLabel]="never">
+          <input matInput type="text" placeholder="Busca una Idea o Reto" [(ngModel)]="searchQuery" name="searchQuery">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </form>
+    </span>
+
+    <span class="menu">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          Perfil
+        </button>
+        <button mat-menu-item>
+          Cerrar Sessión
+        </button>
+      </mat-menu>
+    </span>
+  </mat-toolbar>
+
+  <!-- CONTENT -->
+  <mat-sidenav-container class="app-container">
+    <mat-sidenav mode="side" opened>
+      <mat-nav-list>
+        <a mat-list-item routerLinkActive="active" routerLink="/" role="navigation" class="mat-list-item-header">
+          <mat-icon matListIcon>home</mat-icon> HOME
+        </a>
+        <mat-divider></mat-divider>
+        <h3 matSubheader>
+          <mat-icon matListIcon>flare</mat-icon> IDEAS
+        </h3>
+        <a mat-list-item routerLinkActive="active" routerLink="/ideas" role="navigation">
+          <mat-icon matListIcon>format_list_bulleted</mat-icon> LISTADO
+        </a>
+        <a mat-list-item routerLinkActive="active" routerLink="/ideas/publish" role="navigation">
+          <mat-icon matListIcon>publish</mat-icon> PUBLICAR
+        </a>
+        <div>
+        <!-- <div *ngIf="user.isEvaluator()"> -->
+          <mat-divider></mat-divider>
+          <h3 matSubheader>
+            <mat-icon matListIcon>gps_fixed</mat-icon> RETOS
+          </h3>
+          <a mat-list-item routerLinkActive="active" routerLink="/retos" role="navigation">
+            <mat-icon matListIcon>format_list_bulleted</mat-icon> LISTADO
+          </a>
+          <a mat-list-item routerLinkActive="active" routerLink="/retos/publish" role="navigation">
+            <mat-icon matListIcon>publish</mat-icon> PUBLICAR
+          </a>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
